@@ -18,4 +18,9 @@ jobs:
       - name : Run image
         run : docker run -d -p 8080:80 custom-nginx
 
-      
+  logs:
+    runs-on: ubuntu-latest
+    needs: build 
+
+    steps:
+      - user: actions/checkout@v4
